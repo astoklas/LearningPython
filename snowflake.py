@@ -33,6 +33,6 @@ def moveturtle(t, x, y, d):
 world = TurtleWorld()
 bob = Turtle()
 moveturtle(bob, -150, 90, 0.0)
-snowflake(bob, 300)
+snowflake(bob, 320)
 bob.die()
 user = wait_for_user()
