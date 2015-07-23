@@ -60,6 +60,51 @@ def fibonacci (n):
     else:
         return fibonacci(n-1) + fibonacci(n-2)
 
+def ack(m,n):
+   # if not isInstance(n,int) and not isinstance(m,int):
+   #     print 'Error, n and m need to be of type int'
+   #     return None
+    if m==0:
+        return n+1
+    if (m>0 and n==0):
+        result = ack(m-1,1)
+        return result
+    if (m>0 and n>0):
+        result = ack(m-1,ack(m,n-1))
+        return result
+
+def first(word):
+    return word[0]
+
+def last(word):
+    return word[-1]
+
+def middle(word):
+    return word[1:-1]
+
+def is_palindrome(str):
+    f = first(str)
+    l = last(str)
+    m = middle(str)
+    #print "first/last/middle",f,l,m
+    if f == l:
+        if len(m)>0:
+            return is_palindrome(m)
+        elif len(m)<=1:
+            return True
+        else:
+            return False
+    else:
+        return False
+
+def is_palindrome2(str):
+    if len(str)<=1:
+        return True
+    if first(str) != last(str):
+        return False
+    return is_palindrome2(middle(str))
+
+
 print "Compare 3,4:", compare(3,4)
 print "Compare 4,3:", compare(4,3)
 print "Compare 3,3:", compare(3,3)
@@ -73,3 +118,13 @@ print "factorial 3:", factorial(3)
 print "Fibonacci: "
 for i in range(0,10):
     print fibonacci(i),
+print ""
+print "Ackermann 3,4 should be 125:", ack(3,4)
+
+print "is_palindrome otto", is_palindrome("otto").__str__(), is_palindrome2("otto").__str__()
+print "is_palindrome noon", is_palindrome("noon").__str__(), is_palindrome2("noon").__str__()
+print "is_palindrome redivider", is_palindrome("redivider").__str__(), is_palindrome2("redivider").__str__()
+print "is_palindrome other", is_palindrome("other").__str__(), is_palindrome2("other").__str__()
+print "is_palindrome 1234321", is_palindrome("1234321").__str__(), is_palindrome2("1234321").__str__()
+print "is_palindrome 12344321", is_palindrome("12344321").__str__(), is_palindrome2("12344321").__str__()
+print "is_palindrome 123444321", is_palindrome("123444321").__str__(), is_palindrome2("123444321").__str__()
