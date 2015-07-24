@@ -155,15 +155,20 @@ print "Compare 4,3:", compare(4, 3)
 print "Compare 3,3:", compare(3, 3)
 
 print "Distance:", distance(1, 2, 4, 6)
+
 print "Hypotense:", hypotenuse(3, 4)
+
 print "isBetween:", is_between(3, 4, 5).__str__()
 print "isBetween:", is_between(3, 4, 2).__str__()
 print "isBetween:", is_between(3, 7, 5).__str__()
+
 print "factorial 3:", factorial(3)
+
 print "Fibonacci: "
 for i in range(0, 10):
     print fibonacci(i),
 print ""
+
 print "Ackermann 3,4 should be 125:", ack(3, 4)
 
 print "is_palindrome otto", is_palindrome("otto").__str__(), is_palindrome2("otto").__str__()
