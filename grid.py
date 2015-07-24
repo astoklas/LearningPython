@@ -1,3 +1,5 @@
+__author__ = 'Alexander Stoklasa <alexander@stoklasa.net>'
+
 def print_header(num):
     index = 1
     print '+',

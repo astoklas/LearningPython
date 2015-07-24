@@ -1,4 +1,4 @@
-__author__ = 'astoklas'
+__author__ = 'Alexander Stoklasa <alexander@stoklasa.net>'
 
 from swampy.TurtleWorld import *
 

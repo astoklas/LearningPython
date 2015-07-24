@@ -1,3 +1,5 @@
+__author__ = 'Alexander Stoklasa <alexander@stoklasa.net>'
+
 from swampy.TurtleWorld import *
 from math import *
 
