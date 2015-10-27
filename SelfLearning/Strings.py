@@ -1,7 +1,6 @@
 from __future__ import print_function, division
 
-import stringIO
-
+import io
 def find(word, letter, start=0):
     index = start
     while index < len(word):
@@ -111,17 +110,17 @@ def createSearchPattern():
     # ... bcdef
     s = ""
     for i in range(0,26-4):
-        str = chr(ord('a')+i)+chr(ord('a')+i+1)+chr(ord('a')+i+2)+chr(ord('a')+i+3)+chr(ord('a')+i+4)+'\r'+'\n'
+        str = chr(ord('a')+i)+chr(ord('a')+i+1)+chr(ord('a')+i+2)+chr(ord('a')+i+3)+chr(ord('a')+i+4)+'\n'
         s = s + str.__str__()
-    return s
+    return s.__str__()
 
 def exercise93():
-    forbiddenList = StringIO.StringIO(createSearchPattern())
-    print(forbiddenList)
+    s = createSearchPattern()+"    "
+    forbiddenList = io.StringIO(s)
     lowestScore = 100000
     lowestPattern = ""
-    while (forbiddenList.readline()):
-        pattern = pattern.strip()
+    while (len(forbiddenList.read())>0):
+        pattern = forbiddenList.readline().strip()
         print("Pattern",pattern)
         fin = open('words.txt')
         matches=0
@@ -129,7 +128,7 @@ def exercise93():
             word = line.strip()
             if avoids(word,pattern):
                 matches += 1
-                #print(word,pattern)
+                print(word,pattern)
         fin.close()
         if matches < lowestScore:
             lowestScore = matches
