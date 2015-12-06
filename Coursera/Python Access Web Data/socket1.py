@@ -16,7 +16,8 @@ mysock.close()
 
 fhand = urllib.urlopen('http://www.pythonlearn.com/code/intro-short.txt')
 print "Return Code: ",fhand.getcode()
-print "", fhand.headers()
+print "Addition Info:"
+print fhand.info()
 for line in fhand:
     print line.strip()
 
